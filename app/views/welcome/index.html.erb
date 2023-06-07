@@ -2,9 +2,7 @@
 <p>Find me in app/views/welcome/index.html.erb</p>
 
 <div class="container flex w-48 px-5">
-  <select id="selectElement" data-controller="select">
-    <option>Option 1</option>
-    <option>Option 2</option>
-    <option>Option 3</option>
-  </select>
+  <%= form_tag(root_url) do %>
+    <%= select_tag :country, options_for_select(ISO3166::Country.countries.map { |c| ["#{c.emoji_flag} #{c.iso_short_name}", c.iso_short_name] }), { data: { controller: "select" } } %>
+  <% end %>
 </div>
