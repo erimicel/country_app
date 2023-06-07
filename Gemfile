@@ -73,3 +73,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "countries", "~> 5.4"
+
+gem "country_select", "~> 8.0"
