@@ -1,8 +1,16 @@
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
 
+<!-- Select with default select_tag -->
 <div class="container flex w-48 px-5">
   <%= form_tag(root_url) do %>
     <%= select_tag :country, options_for_select(ISO3166::Country.countries.map { |c| ["#{c.emoji_flag} #{c.iso_short_name}", c.iso_short_name] }), { data: { controller: "select" } } %>
+  <% end %>
+</div>
+
+<!-- Select with country_select gem -->
+<div class="container flex w-48 px-5 mt-10">
+  <%= form_for User.new, url: root_url do |f| %>
+    <%= f.country_select :country, {}, { data: { controller: "select" } } %>
   <% end %>
 </div>
