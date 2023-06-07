@@ -11,6 +11,6 @@
 <!-- Select with country_select gem -->
 <div class="container flex w-48 px-5 mt-10">
   <%= form_for User.new, url: root_url do |f| %>
-    <%= f.country_select :country, {}, { data: { controller: "select" } } %>
+    <%= f.country_select :country, { format: :with_flag }, { data: { controller: "select" } } %>
   <% end %>
 </div>
